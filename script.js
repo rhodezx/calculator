@@ -1,4 +1,4 @@
-const display = document.getElementById('diplay');
+const display = document.getElementById('display');
 const clicksound = document.getElementById('clicksound');
 
 function playSound(){
@@ -8,17 +8,17 @@ function playSound(){
 
 function append(value) {
     playSound();
-    if (display.textcontent === '0') display.textcontent = '';
-    display.textcontent += value;
+    if (display.value === '0') display.value = '';
+    display.value += value;
 }
 function ClearDisplay() {
     playSound();
-    display.textcontent = '0';
+    display.value = '0';
 }
 function deleteLast(){
     playSound();
-    if (display.textcontent.lenght > 1) {
-        display.textcontent = display.textcontent.slice(0, -1);
+    if (display.value.length > 1) {
+        display.value = display.value.slice(0, -1);
     } else {
         ClearDisplay();
     }
@@ -26,9 +26,9 @@ function deleteLast(){
 function calculate() {
     playSound();
     try {
-        display.textcontent = eval(display.textcont);
+        display.value = eval(display.value);
     } catch {
-        display.textcontent = 'Error';
+        display.value = 'Error';
     }
 }
 
